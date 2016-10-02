@@ -1,0 +1,23 @@
+<%= form_tag "/profiles/#{ @profile.id }", method: :post do %>
+  <div>
+    <%= label_tag :address %>
+    <%= text_field_tag :address, @profile.address %>
+  </div>
+  <div>
+    <%= label_tag :phone %>
+    <%= text_field_tag :phone, @profile.phone %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @profile.description %>
+  </div>
+
+  <div>
+    <%= label_tag :active_tickets %>
+    <%= text_field_tag :active_tickets, @profile.active_tickets %>
+  </div>
+<br>
+  <div>
+    <%= submit_tag "Create New Profile" %>
+  </div>
+<% end %>
