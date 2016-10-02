@@ -1,8 +1,8 @@
 <h1>Showing All User Profiles</h1>
 
-<% @profile.each do |profile| %>
-  <h2>Company Address: <%= current_user.profile.address %></h2>
-  <h2>Phone Number: <%= current_user.profile.phone %></h2>
-  <h2>Description: <%= current_user.profile.description %></h2>
-  <h2>Active Job Tickets: <%= current_user.profile.active_ticket %></h2>
+<% @profiles.each do |profile| %>
+  <h2>Company Address: <%= profile.address %></h2>
+  <h2>Phone Number: <%= profile.phone %></h2>
+  <h2>Description: <%= profile.description %></h2>
+  <h2>Active Job Tickets: <%= profile.active_ticket %></h2>
 <% end %>

@@ -4,11 +4,17 @@
     <title>CapstoneApple</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <% if current_user %>
+    <li><%= link_to 'Log Out', '/logout', method: :delete %></li>
+  <% else %>
+    <li><a href="/signup">Sign Up</a></li>
+    <li><a href="/login">Log In</a></li>
+  <% end %>
     <%= yield %>
   </body>
 </html>
