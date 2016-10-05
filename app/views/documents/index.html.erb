@@ -1,6 +1,11 @@
+<section>
 <h1>Documents View Page</h1>
 
 <% @documents.each do |document| %>
   <h2>Document Type: <%= document.contract_type %></h2>
-  <h2>Sample Document URL: <%= document.image %></h2>
+  <h2>Sample Document URL: <img src="<%= document.image %>" alt="document" class="img-responsive"></h2>
 <% end %>
+
+<%= link_to 'Home', '/documents' %>
+<br>
+</section>
