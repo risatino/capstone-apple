@@ -1,21 +1,42 @@
 <h1>Please enter information for your document:</h1>
 
 <%= form_tag '/documents', method: :post do %>
+  
+<h1>Customize Document Contract</h1>
+<%= form_tag '/documents/#{@document.id}/edit', method: :post do %>
   <div>
     <%= label_tag :contract_type %>
     <%= text_field_tag :contract_type, @document.contract_type %>
   </div>
-  
+  <div>
+    <%= label_tag :designer %>
+    <%= text_field_tag :designer %>
+  </div>
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
+  </div>
+  <div>
+    <%= label_tag :due_date %>
+    <%= text_field_tag :due_date %>
+  </div>
+  <div>
+    <%= label_tag :notes %>
+    <%= text_field_tag :notes %>
+  </div>
+  <div>
+    <%= label_tag :billable_hours %>
+    <%= text_field_tag :billable_hours %>
+  </div>
   <div>
     <%= label_tag :image %>
     <%= text_field_tag :image, @document.image %>
   </div>
-
   <div>
     <% hidden_field_tag :user_id %>
   </div>
 <br>
   <div>
-    <%= submit_tag "Submit Document Updates" %>
-  </div>
+    <%= submit_tag 'Submit Document Details', class:"btn btn-success" %>
+  </div> 
 <% end %>

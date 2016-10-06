@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @documents = Document.all
   end
@@ -9,7 +11,11 @@ class DocumentsController < ApplicationController
 
   def create
     @document = Document.create(contract_type: params[:contract_type],
-                                image: params[:image])
+                                image: params[:image],
+                                designer: params[:designer],
+                                title: params[:title],
+                                due_date: params[:due_date],
+                                notes: params[:notes])
     render 'new.html.erb'
   end
 
@@ -25,8 +31,10 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
     @document.update(contract_type: params[:contract_type],
                     image: params[:image],
-                    user_id: params[:user_id]
-                    )
+                    designer: params[:designer],
+                    title: params[:title],
+                    due_date: params[:due_date],
+                    notes: params[:notes])
 
     flash[:success] = "Your data has been updated."
     redirect_to "/documents/#{@document.id}"  

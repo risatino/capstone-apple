@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/documents/new' => 'documents#new'
   post '/documents' => 'documents#create'
   get '/documents/:id' => 'documents#show'
-  get 'documents/:id/edit' => 'documents#edit'
+  get '/documents/:id/edit' => 'documents#edit'
   patch '/documents/:id' => 'documents#update'
   delete '/documents/:id' => 'documents#destroy'
 
@@ -18,8 +18,15 @@ Rails.application.routes.draw do
   get '/profiles/new' => 'profiles#new'
   post '/profiles' => 'profiles#create'
   get '/profiles/:id' => 'profiles#show'
-  get 'profiles/:id/edit' => 'profiles#edit'
+  get '/profiles/:id/edit' => 'profiles#edit'
   patch '/profiles/:id' => 'profiles#update'
   delete '/profiles/:id' => 'profiles#destroy'
 
+  get '/orders' => 'orders#index'
+  get '/orders/new' => 'orders#new'
+  post '/orders' => 'orders#create'
+  get '/orders/:id' => 'orders#show'
+  get '/orders/:id/edit' => 'orders#edit'
+  patch '/orders/:id' => 'orders#update'
+  delete '/orders/:id' => 'orders#destroy'
 end

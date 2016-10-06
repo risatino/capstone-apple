@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @profiles = Profile.all
   end
@@ -8,11 +10,12 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.create(params[:address],
-                              params[:phone],
-                              params[:description],
-                              params[:user_id],
-                              params[:active_tickets])
+    @profile = Profile.create(address: params[:address],
+                              description: params[:description],
+                              user_id: params[:user_id],
+                              phone: params[:phone],
+                              name: params[:name],
+                              email: params[:email])
 
     render 'new.html.erb'
   end
@@ -26,11 +29,12 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @profile = Profile.create(params[:address],
-                              params[:phone],
-                              params[:description],
-                              params[:user_id],
-                              params[:active_tickets])
+    @profile = Profile.create(address: params[:address],
+                              description: params[:description],
+                              user_id: params[:user_id],
+                              phone: params[:phone],
+                              name: params[:name],
+                              email: params[:email])
 
     flash[:success] = "Your profile has been updated."
     redirect_to "/profiles/#{@profile.id}"
