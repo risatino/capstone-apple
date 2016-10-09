@@ -1,8 +1,8 @@
-<h1>Please enter information for your document:</h1>
+<h2>Please enter information for your document:</h2>
 
 <%= form_tag '/documents', method: :post do %>
   
-<h1>Customize Document Contract</h1>
+<h2>Customize Document Contract</h2>
 <%= form_tag '/documents/#{@document.id}/edit', method: :post do %>
   <div>
     <%= label_tag :contract_type %>
@@ -10,23 +10,23 @@
   </div>
   <div>
     <%= label_tag :designer %>
-    <%= text_field_tag :designer %>
+    <%= text_field_tag :designer, @document.designer %>
   </div>
   <div>
     <%= label_tag :title %>
-    <%= text_field_tag :title %>
+    <%= text_field_tag :title, @document.title %>
   </div>
   <div>
     <%= label_tag :due_date %>
-    <%= text_field_tag :due_date %>
+    <%= text_field_tag :due_date, @document.due_date %>
   </div>
   <div>
     <%= label_tag :notes %>
-    <%= text_field_tag :notes %>
+    <%= text_field_tag :notes, @document.notes %>
   </div>
   <div>
     <%= label_tag :billable_hours %>
-    <%= text_field_tag :billable_hours %>
+    <%= text_field_tag :billable_hours, @document.billable_hours %>
   </div>
   <div>
     <%= label_tag :image %>

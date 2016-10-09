@@ -1,16 +1,52 @@
-<%= form_tag "/documents/#{ @document.id }", method: :patch do %>
-  <div>
-    <%= label_tag :contract_type %>
-    <%= text_field_tag :contract_type, @document.contract_type %>
-  </div>
-  
-  <div>
-    <%= label_tag :image %>
-    <%= text_field_tag :image, @document.image %>
-  </div>
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Edit Document</h2>
 
-<br>
-  <div>
+    <%= form_tag "/documents/#{@document.id}", method: :patch do %>
+      
+      <div>
+        <%= label_tag :contract_type %>
+        <%= text_field_tag :contract_type, @document.contract_type %>
+      </div>
+      
+      <div>
+        <%= label_tag :designer %>
+        <%= text_field_tag :designer, @document.designer %>
+      </div>
+      
+      <div>
+        <%= label_tag :title %>
+        <%= text_field_tag :title, @document.title %>
+      </div>
+      
+      <div>
+        <%= label_tag :due_date %>
+        <%= text_field_tag :due_date, @document.due_date %>
+      </div>
+      
+      <div>
+        <%= label_tag :notes %>
+        <%= text_field_tag :notes, @document.notes %>
+      </div>
+      
+      <div>
+        <%= label_tag :billable_hours %>
+        <%= text_field_tag :billable_hours, @document.billable_hours %>
+      </div>
+      
+      <div>
+        <%= label_tag :image %>
+        <%= text_field_tag :image, @document.image %>
+      </div>
+      
+      <div>
+        <% hidden_field_tag :user_id %>
+      </div>
+
     <%= submit_tag "Submit Document Updates" %>
+      
+      <% end %>
+    <div>
   </div>
-<% end %>
+</section>

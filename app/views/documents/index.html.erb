@@ -1,11 +1,11 @@
 <section>
-<h1>Documents View Page</h1>
+<%= link_to 'Back To Home Page', '/documents' %>
+<br>
+<h2>Documents View Page</h2>
 
 <% @documents.each do |document| %>
-  <h2>Document Type: <%= document.contract_type %></h2>
-  <h2>Sample Document URL: <img src="<%= document.image %>" alt="document" class="img-responsive"></h2>
+  <h3>Document Type: <%= document.contract_type %></h3>
+  <h3>Sample Document URL: <img src="<%= document.image %>" alt="document" class="img-responsive"></h3>
 <% end %>
-
-<%= link_to 'Home', '/documents' %>
 <br>
 </section>
