@@ -1,9 +1,10 @@
 <section>
 <h2><%= link_to 'Back To Home Page', '/profiles', class: "btn btn-info" %> <%= link_to "Edit", "/profiles/#{@profile.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/profiles/#{@profile.id}", class: "btn btn-warning", method: :delete %></h2>
 <br>
-<h2>Name: <%= current_user.name %></h2>
-<h2>Email: <%= current_user.email %></h2>
-<h2>Company Address: <%= current_user.profile.address %></h2>
-<h2>Phone Number: <%= current_user.profile.phone %></h2>
-<h2>Description: <%= current_user.profile.description %></h2>
+<h2>User Profile</h2>
+<h3>Name: <%= @profile.name %></h3>
+<h3>Email: <%= @profile.email %></h3>
+<h3>Company Address: <%= @profile.address %></h3>
+<h3>Phone Number: <%= @profile.phone %></h3>
+<h3>Description: <%= @profile.description %></h3>
 </section>
