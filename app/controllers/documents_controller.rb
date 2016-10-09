@@ -16,10 +16,10 @@ class DocumentsController < ApplicationController
                                 title: params[:title],
                                 due_date: params[:due_date],
                                 notes: params[:notes])
+    
     if @document.save
-
       flash[:success] = "Your document has been created"
-      redirect_to "/documents/#{@product.id}"
+      redirect_to "/documents/#{@document.id}"
     else
       render 'new.html.erb'
     end

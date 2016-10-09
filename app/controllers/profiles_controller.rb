@@ -17,7 +17,12 @@ class ProfilesController < ApplicationController
                               name: params[:name],
                               email: params[:email])
 
-    render 'new.html.erb'
+    if @profile.save
+      flash[:success] = "Your profile has been created"
+      redirect_to "/profiles/#{@profile.id}"
+    else
+      render 'new.html.erb'
+    end
   end
 
   def show
@@ -25,11 +30,12 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.fined(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def update
-    @profile = Profile.create(address: params[:address],
+    @profile = Profile.find(params[:id])
+    @profile = Profile.update(address: params[:address],
                               description: params[:description],
                               user_id: params[:user_id],
                               phone: params[:phone],
@@ -42,7 +48,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile = Profile.find(params[:id])
-    @profile = profile.delete
+    @profile.destroy
 
     flash[:warning] = "Your profile is deleted."
     redirect_to '/profiles'

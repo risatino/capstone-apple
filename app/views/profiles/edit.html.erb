@@ -1,26 +1,32 @@
-<%= form_tag "/profiles/#{ @profile.id }", method: :patch do %>
-  <div>
-    <%= label_tag :name %>
-    <%= text_field_tag :name, @profile.name %>
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2>Edit Profile</h2>
+  <%= form_tag "/profiles/#{ @profile.id }", method: :patch do %>
+    <div>
+      <%= label_tag :name %>
+      <%= text_field_tag :name, @profile.name %>
+    </div>
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, @profile.email %>
+    </div>
+    <div>
+      <%= label_tag :address %>
+      <%= text_field_tag :address, @profile.address %>
+    </div>
+    <div>
+      <%= label_tag :phone %>
+      <%= text_field_tag :phone, @profile.phone %>
+    </div>
+    <div>
+      <%= label_tag :description %>
+      <%= text_field_tag :description, @profile.description %>
+    </div>
+  <br>
+    <div>
+  <%= submit_tag "Submit profile Updates" %>
+    <% end %>
+    </div>
   </div>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, @profile.email %>
-  </div>
-  <div>
-    <%= label_tag :address %>
-    <%= text_field_tag :address, @profile.address %>
-  </div>
-  <div>
-    <%= label_tag :phone %>
-    <%= text_field_tag :phone, @profile.phone %>
-  </div>
-  <div>
-    <%= label_tag :description %>
-    <%= text_field_tag :description, @profile.description %>
-  </div>
-<br>
-  <div>
-    <%= submit_tag "Submit profile Updates" %>
-  </div>
-<% end %>
+</section>
