@@ -3,7 +3,7 @@
     <div class="col-sm-8 col-sm-offset-2">
       <h2>Edit Document</h2>
 
-    <%= form_tag "/documents/#{@document.id}", method: :patch do %>
+    <%= form_tag "/documents/#{ @document.id }", method: :patch do %>
       
       <div>
         <%= label_tag :contract_type %>

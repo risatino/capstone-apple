@@ -1,12 +1,12 @@
 <section>
-<%= link_to 'Back To Home Page', '/documents' %>
+<%= link_to 'Back To Home Page', '/documents',  class: "btn btn-info" %>
 <br>
 <h2>Documents View Page</h2>
 
 <% @documents.each do |document| %>
   <h3>Document Type: <%= document.contract_type %></h3>
   <h3>Project Contractor/Designer: <%= document.designer %></h3>
-  <h3>Job ID: <%= document.title %></h3>
+  <h3>Job ID: <a href="/documents/<%= document.id %>"><%= document.title %></a></h3>
   <h3>Project Due Date: <%= document.due_date %></h3>
   <h3>Project Specs: <%= document.notes %></h3>
   <h3>Estimated Billable Hours: <%= document.billable_hours %></h3>

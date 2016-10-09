@@ -3,7 +3,7 @@
 <%= form_tag '/documents', method: :post do %>
   
 <h2>Customize Document Contract</h2>
-<%= form_tag '/documents/#{@document.id}/edit', method: :post do %>
+<%= form_tag '/documents', method: :post do %>
   <div>
     <%= label_tag :contract_type %>
     <%= text_field_tag :contract_type, @document.contract_type %>
