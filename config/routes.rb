@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   patch '/documents/:id' => 'documents#update'
   delete '/documents/:id' => 'documents#destroy'
 
+  get '/legal-contract/documents/:id' => 'contracts#show-legal'
+
+  get '/musician-contract/documents/:id' => 'contracts#show-music'
+  
+  get '/designer-contract/documents/:id' => 'contracts#show-design'
+
   get '/profiles' => 'profiles#index'
   get '/profiles/new' => 'profiles#new'
   post '/profiles' => 'profiles#create'
@@ -15,7 +21,7 @@ Rails.application.routes.draw do
   get '/profiles/:id/edit' => 'profiles#edit'
   patch '/profiles/:id' => 'profiles#update'
   delete '/profiles/:id' => 'profiles#destroy'
-  
+
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 

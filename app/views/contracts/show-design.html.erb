@@ -1,0 +1,10 @@
+<section>
+<h2>Design or Illustration Contract</h2>
+<h3>Document Type: <%= @document.contract_type %></h3>
+<h3>Project Contractor/Designer: <%= @document.designer %></h3>
+<h3>Job ID: <%= @document.title %></h3>
+<h3>Project Due Date: <%= @document.due_date %></h3>
+<h3>Project Specs: <%= @document.notes %></h3>
+<h3>Estimated Billable Hours: <%= @document.billable_hours %></h3>
+<h3>Sample Document URL: <img src="<%= @document.image %>" alt="document" class="img-responsive"></h3>
+</section>
