@@ -1,19 +1,15 @@
-<h2>Please enter information for your document:</h2>
-
-<%= form_tag '/documents', method: :post do %>
-  
-<h2>Customize Document Contract</h2>
+<h2>Customize Document Contract:</h2>
 <%= form_tag '/documents', method: :post do %>
   <div>
     <%= label_tag :contract_type %>
     <%= text_field_tag :contract_type, @document.contract_type %>
   </div>
   <div>
-    <%= label_tag :designer %>
+    <%= label_tag :contractor %>
     <%= text_field_tag :designer, @document.designer %>
   </div>
   <div>
-    <%= label_tag :title %>
+    <%= label_tag :job_number %>
     <%= text_field_tag :title, @document.title %>
   </div>
   <div>
@@ -29,7 +25,7 @@
     <%= text_field_tag :billable_hours, @document.billable_hours %>
   </div>
   <div>
-    <%= label_tag :image %>
+    <%= label_tag :attachments %>
     <%= text_field_tag :image, @document.image %>
   </div>
   <div>
@@ -37,6 +33,6 @@
   </div>
 <br>
   <div>
-    <%= submit_tag 'Submit Document Details', class:"btn btn-success" %>
+    <%= submit_tag 'Create New Document', class:"btn btn-success" %>
   </div> 
 <% end %>

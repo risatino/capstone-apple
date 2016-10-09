@@ -1,5 +1,5 @@
 <section>
-<h2><%= link_to 'Back To Home Page', '/documents', class: "btn btn-info" %> <%= link_to "Edit", "/documents/#{@document.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/documents/#{@document.id}", class: "btn btn-warning",method: :delete %></h2>
+<h2><%= link_to 'Back To Home Page', '/documents', class: "btn btn-info" %> <%= link_to "Edit", "/documents/#{@document.id}/edit", class: "btn btn-info" %> <%= link_to 'Delete', "/documents/#{@document.id}", class: "btn btn-warning", method: :delete %></h2>
 <br>
 <h2>Current Document</h2>
 <h3>Document Type: <%= @document.contract_type %></h3>
