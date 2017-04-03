@@ -1,16 +1,18 @@
-<section>
-<h2><%= link_to 'Back To Home Page', '/documents',  class: "btn btn-info" %> <%= link_to 'New', '/documents/new', class: "btn btn-info" %> <%= link_to 'Profiles', '/profiles', class: "btn btn-info" %></h2>
-<br>
-<h2>Documents View Page</h2>
+<div class="container-fluid">
+  <section>
+  <h2><%= link_to 'Back To Home Page', '/documents',  class: "btn btn-info" %> <%= link_to 'New', '/documents/new', class: "btn btn-info" %> <%= link_to 'Profiles', '/profiles', class: "btn btn-info" %></h2>
+  <br>
+  <h2>Documents View Page</h2>
 
-<% @documents.each do |document| %>
-  <h3>Document Type: <%= document.contract_type %></h3>
-  <h3>Project Contractor/Designer: <%= document.designer %></h3>
-  <h3>Job ID: <a href="/documents/<%= document.id %>"><%= document.title %></a></h3>
-  <h3>Project Due Date: <%= document.due_date %></h3>
-  <h3>Project Specs: <%= document.notes %></h3>
-  <h3>Estimated Billable Hours: <%= document.billable_hours %></h3>
-  <h3>Sample Document URL: <img src="<%= document.image %>" alt="document" class="img-responsive"></h3>
-<% end %>
-<br>
-</section>
+  <% @documents.each do |document| %>
+    <h3>Document Type: <%= document.contract_type %></h3>
+    <h3>Project Contractor/Designer: <%= document.designer %></h3>
+    <h3>Job ID: <a href="/documents/<%= document.id %>"><%= document.title %></a></h3>
+    <h3>Project Due Date: <%= document.due_date %></h3>
+    <h3>Project Specs: <%= document.notes %></h3>
+    <h3>Estimated Billable Hours: <%= document.billable_hours %></h3>
+    <h3>Sample Document URL: <img src="<%= document.image %>" alt="document" class="img-responsive"></h3>
+  <% end %>
+  <br>
+  </section>
+</div>
